@@ -1,8 +1,0 @@
-version: 2
-
-sources:
-  - name: sap
-    database: sources_{{ target.name }} 
-    schema: sap  
-    tables:
-      - name: category

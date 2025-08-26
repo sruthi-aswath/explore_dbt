@@ -39,6 +39,6 @@ models:
   my_new_project:
     transform:
       +materialized: table
-      +database: transform_dev
+      +database: transform_{{ target.name }}
       +schema: sales
 

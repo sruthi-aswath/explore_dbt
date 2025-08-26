@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: oracle
+    database: sources_dev  
+    schema: oracle  
+    tables:
+      - name: orders
+      - name: lineitem

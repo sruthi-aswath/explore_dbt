@@ -2,7 +2,7 @@ version: 2
 
 sources:
   - name: oracle
-    database: sources_dev  
+    database: sources_{{ target.name }} 
     schema: oracle  
     tables:
       - name: orders

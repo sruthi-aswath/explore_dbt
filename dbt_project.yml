@@ -38,10 +38,6 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   my_new_project:
     transform:
-      sales:
-        +materialized: table
-        +database: transform_{{ target.name }}
-        +schema: sales
       marketing:
         +materialized: table
         +database: transform_{{ target.name }}

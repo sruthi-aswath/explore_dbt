@@ -14,7 +14,6 @@ profile: 'default'
 # found in the "models/" directory. You probably won't need to change these!
 model-paths: ["models"]
 analysis-paths: ["analyses"]
-test-paths: ["tests"]
 seed-paths: ["seeds"]
 macro-paths: ["macros"]
 snapshot-paths: ["snapshots"]
@@ -35,6 +34,12 @@ clean-targets:         # directories to be removed by `dbt clean`
 # continue to be built as views. These settings can be overridden in the individual model files
 # using the `{{ config(...) }}` macro.
 
+data_tests:
+  my_new_project:
+    +database: transform_{{ target.name }}
+    +schema: tests
+    +severity: warn
+
 models:
   my_new_project:
     transform:
@@ -46,3 +51,7 @@ models:
         +materialized: table
         +database: transform_{{ target.name }}
         +schema: marketing
+      finance:
+        +materialized: table
+        +database: transform_{{ target.name }}
+        +schema: finance

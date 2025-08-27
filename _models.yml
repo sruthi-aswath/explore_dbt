@@ -1,0 +1,12 @@
+version: 2
+
+models:
+  - name: top5_customers
+    columns:
+      - name: O_CUSTKEY
+        data_tests:
+          - unique:
+            config:
+              tags: ['my_tag']          
+
+          

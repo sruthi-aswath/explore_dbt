@@ -46,3 +46,14 @@ models:
         +materialized: table
         +database: transform_{{ target.name }}
         +schema: marketing
+      finance:
+        +materialized: table
+        +database: transform_{{ target.name }}
+        +schema: finance
+
+seeds:
+  my_new_project:
+    customers:
+      column_types:
+        customer_id: integer
+        signup_date: date
